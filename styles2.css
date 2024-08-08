@@ -67,7 +67,7 @@ body {
     background-image: url('images/hero.jpg');
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 20vh;
     display: flex;
     align-items: center;
     color: #e08d8d;

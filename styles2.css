@@ -10,7 +10,7 @@ body {
 .sidebar {
     background-color: #333;
     color: #fff;
-    width: 50px;
+    width: 100px;
     height: 100vh;
     position: fixed;
     top: 0;

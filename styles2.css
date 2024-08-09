@@ -207,6 +207,7 @@ footer p {
     background-image: url('images/hero.jpg');
     background-size: cover;
     background-position: center;
+    display: flex;
     height: 30%;
     align-items: center;
     color: #e08d8d;

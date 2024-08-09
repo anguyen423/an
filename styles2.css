@@ -213,6 +213,8 @@ footer p {
     color: #e08d8d;
     text-align: center;
     padding: 0 30px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .container1 h2 {

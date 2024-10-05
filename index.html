@@ -196,19 +196,22 @@
             <span class="dot" onclick="currentSlide(6)"></span>
         </div>
     </div>
-
-    <script>
+                
+   <script>
         let slideIndex = 1;
         showSlides(slideIndex);
 
+        // Function to change slides manually (next or previous)
         function changeSlide(n) {
             showSlides(slideIndex += n);
         }
 
+        // Function to display a specific slide when clicking on the dots
         function currentSlide(n) {
             showSlides(slideIndex = n);
         }
 
+        // Function to show the slides
         function showSlides(n) {
             let slides = document.getElementsByClassName("slides");
             let dots = document.getElementsByClassName("dot");
@@ -220,21 +223,25 @@
                 slideIndex = slides.length;
             }
 
+            // Hide all slides
             for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
 
+            // Remove the "active" class from all dots
             for (let i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(" active", "");
             }
 
+            // Display the current slide and set the corresponding dot as active
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
-        setInterval(() => {
-        changeSlide(1);
-        }, 10000);
-            
         }
+
+        // Set an interval to change the slide every 3 seconds (3000 ms)
+        setInterval(() => {
+            changeSlide(1);
+        }, 3000);
     </script>
 
                     <!--        <a href="https://www.instagram.com/selenaadilla/" class="btn">Her Momma's Insta</a>   -->

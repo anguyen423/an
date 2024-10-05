@@ -124,14 +124,7 @@
         .active, .dot:hover {
             background-color: #717171;
         }
-
-        footer {
-            margin-top: 50px;
-            text-align: center;
-            padding: 10px;
-            background: #333;
-            color: white;
-            font-family: 'Raleway', sans-serif;
+            // Set an interval to change the slide every 3 seconds (3000 ms)
         }
     </style>
 </head>
@@ -237,6 +230,10 @@
 
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
+        setInterval(() => {
+        changeSlide(1);
+        }, 3000);
+            
         }
     </script>
 

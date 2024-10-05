@@ -60,17 +60,20 @@
             position: relative;
             margin: auto;
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-            border-radius: 15px;
+            border-radius: 10px;
             overflow: hidden;
         }
 
         .slides {
             display: none;
+            height: 100%;
         }
 
         .slides img {
             width: 100%;
-            border-radius: 15px;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
         }
 
         .prev, .next {
@@ -78,11 +81,11 @@
             position: absolute;
             top: 50%;
             width: auto;
-            padding: 16px;
-            margin-top: -22px;
+            padding: 8px;
+            margin-top: -16px;
             color: white;
             font-weight: bold;
-            font-size: 24px;
+            font-size: 18px;
             transition: 0.6s ease;
             user-select: none;
         }
@@ -106,9 +109,9 @@
 
         .dot {
             cursor: pointer;
-            height: 15px;
-            width: 15px;
-            margin: 0 5px;
+            height: 10px;
+            width: 10px;
+            margin: 0 4px;
             background-color: #bbb;
             border-radius: 50%;
             display: inline-block;

@@ -6,6 +6,128 @@
     <title>Andrea's Website</title>
     <link rel="stylesheet" href="styles2.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #333;
+            color: #fff;
+            padding-top: 20px;
+        }
+
+        .sidebar h1 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar nav ul li {
+            margin: 20px 0;
+        }
+
+        .sidebar nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+
+        .slideshow-container {
+            max-width: 400px;
+            height: 300px;
+            position: relative;
+            margin: auto;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: none;
+        }
+
+        .slides img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            transition: 0.6s ease;
+            user-select: none;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .dot-container {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            padding: 10px;
+            background: #333;
+            color: white;
+            font-family: 'Raleway', sans-serif;
+        }
+    </style>
 </head>
 <body>
     <div class="sidebar">
@@ -27,9 +149,95 @@
                 <audio autoplay loop><source src="../an/images/BundleOfJoy.mp3" type="audio/mpeg"></audio>
                 <h2>Welcome to My Daughter's Website</h2>
                 <p>Please enjoy following Andrea's life journey through these images.</p>
-                <div class="container">
-                <iframe src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExaG96Y3IxcjhxOWxjc3BqNmltMWE0cXBoZXIwOXZ0MWN2dTE5bWVkZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5KehGxFnEAmmk/giphy.gif" width="480" height="264" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-                </div>
+                 <div class="content">
+        <div class="slideshow-container">
+<!-- Slide Show -->
+            <!-- Slide 1 -->
+            <div class="slides">
+                <img src="../an/images/20240922-Selena_Andrew_Baby_Shower-A-00008.jpg" alt="Baby Shower 1">
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slides">
+                <img src="../an/images/20240922-Selena_Andrew_Baby_Shower-A-00011.jpg" alt="Baby Shower 2">
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slides">
+                <img src="../an/images/20240922-Selena_Andrew_Baby_Shower-A-00014.jpg" alt="Baby Shower 3">
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="slides">
+                <img src="../an/images/sel1.jpg" alt="Selena and Andrew">
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="slides">
+                <img src="../an/images/sel3.jpg" alt="Family Gathering">
+            </div>
+
+            <!-- Slide 6 -->
+            <div class="slides">
+                <img src="../an/images/sel4.jpg" alt="Celebration">
+            </div>
+
+            <!-- Navigation arrows -->
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+
+        <!-- Dots for navigation -->
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+        </div>
+
+        <footer>
+            <p>&copy; Est. 2024 by Selena & Andrew. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("slides");
+            let dots = document.getElementsByClassName("dot");
+
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
                     <!--        <a href="https://www.instagram.com/selenaadilla/" class="btn">Her Momma's Insta</a>   -->
             </div>
         </section>
